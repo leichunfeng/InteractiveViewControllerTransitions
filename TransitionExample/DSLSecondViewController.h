@@ -11,6 +11,7 @@
 
 @interface DSLSecondViewController : UIViewController
 
+@property (nonatomic, strong) UINavigationBar *navigationBar;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @property (nonatomic, strong) DSLThing *thing;

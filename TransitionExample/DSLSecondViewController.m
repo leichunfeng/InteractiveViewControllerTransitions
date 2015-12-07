@@ -7,22 +7,18 @@
 //
 
 #import "DSLSecondViewController.h"
-
 #import "DSLFirstViewController.h"
 #import "DSLThing.h"
 #import "DSLTransitionFromSecondToFirst.h"
 
-
-@interface DSLSecondViewController ()<UINavigationControllerDelegate>
+@interface DSLSecondViewController () <UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *overviewLabel;
 @property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
 
 @end
 
-
 @implementation DSLSecondViewController
-
 
 #pragma mark UIViewController methods
 
@@ -52,6 +48,15 @@
     UIScreenEdgePanGestureRecognizer *popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePopRecognizer:)];
     popRecognizer.edges = UIRectEdgeLeft;
     [self.view addGestureRecognizer:popRecognizer];
+    
+    UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 44)];
+    
+    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:self.title];
+    [navigationBar pushNavigationItem:navigationItem animated:YES];
+    
+    [self.view addSubview:navigationBar];
+    
+    self.navigationBar = navigationBar;
 }
 
 

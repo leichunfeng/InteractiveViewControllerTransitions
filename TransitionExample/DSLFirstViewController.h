@@ -12,6 +12,8 @@
 
 @interface DSLFirstViewController : UICollectionViewController
 
+@property (nonatomic, strong) UINavigationBar *navigationBar;
+
 - (DSLThingCell*)collectionViewCellForThing:(DSLThing*)thing;
 
 @end

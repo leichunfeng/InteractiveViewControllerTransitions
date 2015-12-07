@@ -32,13 +32,19 @@
 
     // Setup the initial view states
     toViewController.view.frame = [transitionContext finalFrameForViewController:toViewController];
+    toViewController.view.frame = CGRectInset(toViewController.view.frame, 10, 10);
+    toViewController.navigationBar.frame = CGRectMake(0, 20, CGRectGetWidth(toViewController.view.frame), 44);
+    
     [containerView insertSubview:toViewController.view belowSubview:fromViewController.view];
     [containerView addSubview:imageSnapshot];
 
     [UIView animateWithDuration:duration animations:^{
         // Fade out the source view controller
         fromViewController.view.alpha = 0.0;
-
+        
+        toViewController.view.frame = [transitionContext finalFrameForViewController:toViewController];
+        toViewController.navigationBar.frame = CGRectMake(0, 20, CGRectGetWidth(toViewController.view.frame), 44);
+        
         // Move the image view
         imageSnapshot.frame = [containerView convertRect:cell.imageView.frame fromView:cell.imageView.superview];
     } completion:^(BOOL finished) {

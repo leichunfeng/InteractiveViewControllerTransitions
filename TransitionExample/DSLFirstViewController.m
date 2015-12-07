@@ -7,18 +7,16 @@
 //
 
 #import "DSLFirstViewController.h"
-
 #import "DSLThing.h"
 #import "DSLThingCell.h"
 #import "DSLSecondViewController.h"
 #import "DSLTransitionFromFirstToSecond.h"
 
-@interface DSLFirstViewController ()<UINavigationControllerDelegate>
+@interface DSLFirstViewController () <UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSArray *things;
 
 @end
-
 
 @implementation DSLFirstViewController
 
@@ -28,10 +26,21 @@
         _things = [DSLThing exampleThings];
         self.title = @"Things";
     }
-
     return self;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 44)];
+    
+    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:self.title];
+    [navigationBar pushNavigationItem:navigationItem animated:YES];
+    
+    [self.view addSubview:navigationBar];
+    
+    self.navigationBar = navigationBar;
+}
 
 #pragma mark UIViewController methods
 
