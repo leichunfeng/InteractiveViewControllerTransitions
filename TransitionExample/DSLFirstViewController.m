@@ -11,6 +11,7 @@
 #import "DSLThingCell.h"
 #import "DSLSecondViewController.h"
 #import "DSLTransitionFromFirstToSecond.h"
+#import "DSLViewControllerAnimatedTransition.h"
 
 @interface DSLFirstViewController () <UINavigationControllerDelegate>
 
@@ -31,6 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.collectionView.contentInset = UIEdgeInsetsMake(64-20, 0, 0, 0);
     
     UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 44)];
     
@@ -82,7 +85,7 @@
                                                  toViewController:(UIViewController *)toVC {
     // Check if we're transitioning from this view controller to a DSLSecondViewController
     if (fromVC == self && [toVC isKindOfClass:[DSLSecondViewController class]]) {
-        return [[DSLTransitionFromFirstToSecond alloc] init];
+        return [[DSLViewControllerAnimatedTransition alloc] initWithOperation:operation];
     }
     else {
         return nil;

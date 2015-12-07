@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2478EED91C15D08C0078DC70 /* DSLViewControllerAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478EED81C15D08C0078DC70 /* DSLViewControllerAnimatedTransition.m */; };
 		B5BA7317179BE1E400782CB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BA7316179BE1E400782CB9 /* Foundation.framework */; };
 		B5BA7319179BE1E400782CB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BA7318179BE1E400782CB9 /* CoreGraphics.framework */; };
 		B5BA731B179BE1E400782CB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BA731A179BE1E400782CB9 /* UIKit.framework */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2478EED71C15D08C0078DC70 /* DSLViewControllerAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLViewControllerAnimatedTransition.h; sourceTree = "<group>"; };
+		2478EED81C15D08C0078DC70 /* DSLViewControllerAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLViewControllerAnimatedTransition.m; sourceTree = "<group>"; };
 		B5BA7313179BE1E400782CB9 /* TransitionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BA7316179BE1E400782CB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5BA7318179BE1E400782CB9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +115,8 @@
 				B5BA734E179BE22F00782CB9 /* DSLFirstViewController.m */,
 				B5BA7364179BEA7300782CB9 /* DSLTransitionFromFirstToSecond.h */,
 				B5BA7365179BEA7300782CB9 /* DSLTransitionFromFirstToSecond.m */,
+				2478EED71C15D08C0078DC70 /* DSLViewControllerAnimatedTransition.h */,
+				2478EED81C15D08C0078DC70 /* DSLViewControllerAnimatedTransition.m */,
 				B5BA734F179BE24000782CB9 /* DSLSecondViewController.h */,
 				B5BA7350179BE24000782CB9 /* DSLSecondViewController.m */,
 				B5BA7367179BED8900782CB9 /* DSLTransitionFromSecondToFirst.h */,
@@ -224,6 +229,7 @@
 			files = (
 				B5BA7369179BED8900782CB9 /* DSLTransitionFromSecondToFirst.m in Sources */,
 				B5BA7351179BE2D400782CB9 /* DSLFirstViewController.m in Sources */,
+				2478EED91C15D08C0078DC70 /* DSLViewControllerAnimatedTransition.m in Sources */,
 				B5BA7327179BE1E400782CB9 /* DSLAppDelegate.m in Sources */,
 				B5BA7352179BE2D800782CB9 /* DSLSecondViewController.m in Sources */,
 				B5BA7355179BE37800782CB9 /* DSLThing.m in Sources */,

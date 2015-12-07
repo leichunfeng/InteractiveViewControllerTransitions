@@ -10,6 +10,7 @@
 #import "DSLFirstViewController.h"
 #import "DSLThing.h"
 #import "DSLTransitionFromSecondToFirst.h"
+#import "DSLViewControllerAnimatedTransition.h"
 
 @interface DSLSecondViewController () <UINavigationControllerDelegate>
 
@@ -68,7 +69,7 @@
                                                  toViewController:(UIViewController *)toVC {
     // Check if we're transitioning from this view controller to a DSLFirstViewController
     if (fromVC == self && [toVC isKindOfClass:[DSLFirstViewController class]]) {
-        return [[DSLTransitionFromSecondToFirst alloc] init];
+        return [[DSLViewControllerAnimatedTransition alloc] initWithOperation:operation];
     }
     else {
         return nil;
@@ -78,7 +79,7 @@
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                          interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
     // Check if this is for our custom transition
-    if ([animationController isKindOfClass:[DSLTransitionFromSecondToFirst class]]) {
+    if ([animationController isKindOfClass:[DSLViewControllerAnimatedTransition class]]) {
         return self.interactivePopTransition;
     }
     else {
