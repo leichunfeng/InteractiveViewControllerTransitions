@@ -52,6 +52,8 @@
 
         [UIView animateWithDuration:duration
                          animations:^{
+                             fromViewController.view.alpha = 0;
+                             fromViewController.view.frame = CGRectInset(fromViewController.view.frame, 10, 10);
                              toViewController.view.frame = CGRectOffset(toViewController.view.frame, -CGRectGetWidth(toViewController.view.frame), 0);
                          }
                          completion:^(BOOL finished) {
@@ -63,7 +65,9 @@
         
         [UIView animateWithDuration:duration
                          animations:^{
+                             toViewController.view.alpha = 1;
                              fromViewController.view.frame = CGRectOffset(fromViewController.view.frame, CGRectGetWidth(fromViewController.view.frame), 0);
+                             toViewController.view.frame = [transitionContext finalFrameForViewController:toViewController];
                          }
                          completion:^(BOOL finished) {
                              [transitionContext completeTransition:![transitionContext transitionWasCancelled]];

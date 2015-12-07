@@ -40,7 +40,7 @@
     UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:self.title];
     [navigationBar pushNavigationItem:navigationItem animated:YES];
     
-    [self.view addSubview:navigationBar];
+//    [self.view addSubview:navigationBar];
     
     self.navigationBar = navigationBar;
 }
